@@ -15,7 +15,7 @@ const client = new MongoClient(uri, {
 });
 async function run() {
   try {
-    await client.connect();
+    client.connect();
     const newsCollection = client.db("hotello").collection("news");
     app.get("/news", async (req, res) => {
       console.log(req.query);
